@@ -4,6 +4,8 @@ import { ArrowRight } from "lucide-react";
 import ProfileImage from "/public/assets/images/ProfileImage.jpeg";
 import AnimatedProfile from "./AnimatedProfile";
 
+const LINKEDIN_URL = "https://www.linkedin.com/in/caohaison/";
+
 const Hero = () => {
   return (
     <div id="story" className="min-h-screen bg-white flex items-center px-8">
@@ -25,17 +27,19 @@ const Hero = () => {
 
             <div className="flex flex-row gap-4 mt-8 justify-center md:justify-start">
               <a
-                href="#work"
+                href="#projects"
                 className="px-6 py-3 bg-black text-white rounded-full text-sm font-medium hover:bg-gray-800 transition-colors"
               >
                 See my work
               </a>
               <a
-                href="#contact"
-                className="px-6 py-3 bg-white text-black border border-black rounded-full text-sm font-medium hover:bg-gray-100 transition-colors inline-flex items-center gap-2"
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-white text-black border border-black rounded-full text-sm font-medium hover:bg-gray-100 transition-colors inline-flex items-center gap-1"
               >
                 Get in touch
-                <ArrowRight size={16} />
+                <ArrowRight size={16} className="rotate-[-45deg]" />
               </a>
             </div>
           </div>
