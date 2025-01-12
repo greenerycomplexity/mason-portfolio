@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-// import Header from "@/components/Header";
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ProjectCard from "@/components/ProjectCard";
 
@@ -25,7 +25,7 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* <Header /> */}
+      <Header />
 
       {/* Add padding-top to account for fixed header */}
       <Hero />
@@ -33,7 +33,7 @@ const Portfolio = () => {
       {/* Projects Grid */}
       <section id="projects" className="py-20">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">
+          <h2 className="text-4xl font-bold mb-12 text-center">
             Featured Projects
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

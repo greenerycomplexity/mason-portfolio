@@ -1,100 +1,62 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
+import SkillIcon from "./SkillIcon";
 
-interface SkillIconProps {
-  icon: string;
-  delay: number;
-  index: number;
-  isEnlarged: boolean;
-}
-
-const SkillIcon = ({ icon, delay, index, isEnlarged }: SkillIconProps) => {
-  // Calculate initial position around the circle
-  const angle = (index * (360 / 5)) % 360;
-  const radius = 250; // Keep the same radius
-  const initialX = radius * Math.cos((angle * Math.PI) / 180);
-  const initialY = radius * Math.sin((angle * Math.PI) / 180);
-
-  // Base size is w-20 (80px), enlarged size is w-40 (160px)
-  const sizeClass = isEnlarged ? "w-40 h-40" : "w-24 h-24";
-
-  return (
-    <div
-      className={`absolute ${sizeClass} transition-all duration-500 ease-in-out opacity-0`}
-      style={{
-        animation: `fadeIn 0.7s ${delay}s forwards`,
-        left: "50%",
-        top: "50%",
-        transform: `translate(${initialX}px, ${initialY}px) translate(-50%, -50%)`,
-      }}
-    >
-      <div style={{ animation: `counterRotate 20s linear infinite` }}>
-        <Image
-          src={icon}
-          alt="Skill icon"
-          width={isEnlarged ? 160 : 80}
-          height={isEnlarged ? 160 : 80}
-          className="w-full h-full object-contain transition-all duration-500"
-        />
-      </div>
-    </div>
-  );
-};
-
-interface AnimatedProfileProps {
-  profileImage: string | StaticImageData;
-}
-
-// Move skillIcons outside the component
 const skillIcons = [
   "/assets/icons/swiftui.svg",
   "/assets/icons/python.svg",
   "/assets/icons/csharp.svg",
   "/assets/icons/react.svg",
   "/assets/icons/git.svg",
-] as const;
+];
+
+interface AnimatedProfileProps {
+  profileImage: string | StaticImageData; // Profile image source
+}
 
 const AnimatedProfile = ({ profileImage }: AnimatedProfileProps) => {
-  const [visibleIcons, setVisibleIcons] = useState<string[]>([]);
-  const [enlargedIcon, setEnlargedIcon] = useState<number | null>(null);
-  const [lastSelected, setLastSelected] = useState<number | null>(null);
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
+  // ===== State Management =====
+  const [visibleIcons, setVisibleIcons] = useState<string[]>([]); // Currently displayed icons
+  const [enlargedIcon, setEnlargedIcon] = useState<number | null>(null); // Index of enlarged icon
+  const [lastSelected, setLastSelected] = useState<number | null>(null); // Track last enlarged icon
+  const [isImageLoaded, setIsImageLoaded] = useState(false); // Profile image load state
 
+  // ===== Initial Icon Selection =====
   useEffect(() => {
-    // Randomly select 5 icons to show
+    // Randomly select and shuffle 5 icons on mount
     const shuffled = [...skillIcons].sort(() => 0.5 - Math.random());
     const selected = shuffled.slice(0, 5);
     setVisibleIcons(selected);
-  }, []); // Empty dependency array since skillIcons is now constant
+  }, []);
 
+  // ===== Animation Logic =====
   useEffect(() => {
-    // Only start animations if image is loaded
+    // Wait for profile image to load before starting animations
     if (!isImageLoaded) return;
 
+    // Initial delay before starting icon enlargement
     const initialDelay = setTimeout(() => {
       const firstIndex = Math.floor(Math.random() * 5);
       setEnlargedIcon(firstIndex);
       setLastSelected(firstIndex);
     }, 3000);
 
+    // Helper function to select next random icon
     const selectNewIcon = () => {
       let randomIndex: number;
       do {
         randomIndex = Math.floor(Math.random() * 5);
       } while (randomIndex === lastSelected);
 
-      // Immediately update both states
       setEnlargedIcon(randomIndex);
       setLastSelected(randomIndex);
     };
 
-    // Set up the continuous icon changes
-    const interval = setInterval(() => {
-      selectNewIcon();
-    }, 2500);
+    // Set up periodic icon changes
+    const interval = setInterval(selectNewIcon, 2500);
 
-    // Cleanup
+    // Cleanup timers on unmount
     return () => {
       clearTimeout(initialDelay);
       clearInterval(interval);
@@ -103,19 +65,20 @@ const AnimatedProfile = ({ profileImage }: AnimatedProfileProps) => {
 
   return (
     <div className="relative w-80 h-80">
-      {/* Profile Image */}
+      {/* Profile Image Container */}
       <div className="relative w-full h-full">
         <Image
           src={profileImage}
           alt="Profile picture"
           fill
-          className="rounded-full object-cover"
+          className="rounded-full object-cover opacity-0"
+          style={{ animation: "fadeIn 1s 0.5s forwards" }}
           priority
-          onLoad={() => setTimeout(() => setIsImageLoaded(true), 500)}
+          onLoad={() => setTimeout(() => setIsImageLoaded(true), 1000)}
         />
       </div>
 
-      {/* Floating Icons - Only render when image is loaded */}
+      {/* Rotating Skill Icons Container */}
       {isImageLoaded && (
         <div
           className="absolute inset-0 flex items-center justify-center"

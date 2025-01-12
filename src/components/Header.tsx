@@ -6,28 +6,23 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <nav className="fixed top-4 left-10 right-10 bg-white shadow-md rounded-full z-50">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
-          <span className="text-xl font-bold">Mason Cao</span>
-
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 bg-white shadow-md rounded-full z-50">
+      <div className="px-4">
+        <div className="flex justify-between items-center h-16 gap-x-10 mx-10">
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-10">
             <a href="#story" className="text-black hover:text-gray-900">
-              Story
+              About
             </a>
-            <a href="#works" className="text-black hover:text-gray-900">
-              Works
-            </a>
-            <a href="#contact" className="text-black hover:text-gray-900">
-              Contact
+            <a href="#projects" className="text-black hover:text-gray-900">
+              Projects
             </a>
           </div>
 
           {/* CTA Button */}
           <a
             href="#hire"
-            className="hidden md:block px-4 py-2 bg-black text-white rounded-full text-sm font-medium hover:bg-gray-800 transition-colors"
+            className="hidden md:block px-5 py-3 bg-black text-white rounded-full text-sm font-medium hover:bg-gray-800 transition-colors"
           >
             Say Hello!
           </a>
