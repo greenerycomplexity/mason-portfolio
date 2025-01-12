@@ -2,7 +2,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import ProfileImage from "/public/assets/images/ProfileImage.jpeg";
-import Image from "next/image";
 import AnimatedProfile from "./AnimatedProfile";
 
 const Hero = () => {

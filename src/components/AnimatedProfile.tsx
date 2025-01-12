@@ -46,25 +46,26 @@ interface AnimatedProfileProps {
   profileImage: string | StaticImageData;
 }
 
+// Move skillIcons outside the component
+const skillIcons = [
+  "/assets/icons/swiftui.svg",
+  "/assets/icons/python.svg",
+  "/assets/icons/csharp.svg",
+  "/assets/icons/react.svg",
+  "/assets/icons/git.svg",
+] as const;
+
 const AnimatedProfile = ({ profileImage }: AnimatedProfileProps) => {
   const [visibleIcons, setVisibleIcons] = useState<string[]>([]);
   const [enlargedIcon, setEnlargedIcon] = useState<number | null>(null);
   const [lastSelected, setLastSelected] = useState<number | null>(null);
-
-  const skillIcons = [
-    "/assets/icons/swiftui.svg",
-    "/assets/icons/python.svg",
-    "/assets/icons/csharp.svg",
-    "/assets/icons/react.svg",
-    "/assets/icons/git.svg",
-  ];
 
   useEffect(() => {
     // Randomly select 5 icons to show
     const shuffled = [...skillIcons].sort(() => 0.5 - Math.random());
     const selected = shuffled.slice(0, 5);
     setVisibleIcons(selected);
-  }, []);
+  }, []); // Empty dependency array since skillIcons is now constant
 
   useEffect(() => {
     // Initial delay to wait for fade-in animations
@@ -89,7 +90,7 @@ const AnimatedProfile = ({ profileImage }: AnimatedProfileProps) => {
     // Set up the continuous icon changes
     const interval = setInterval(() => {
       selectNewIcon();
-    }, 3000);
+    }, 2500);
 
     // Cleanup
     return () => {
