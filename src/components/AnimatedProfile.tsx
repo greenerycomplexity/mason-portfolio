@@ -59,6 +59,7 @@ const AnimatedProfile = ({ profileImage }: AnimatedProfileProps) => {
   const [visibleIcons, setVisibleIcons] = useState<string[]>([]);
   const [enlargedIcon, setEnlargedIcon] = useState<number | null>(null);
   const [lastSelected, setLastSelected] = useState<number | null>(null);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   useEffect(() => {
     // Randomly select 5 icons to show
@@ -68,13 +69,14 @@ const AnimatedProfile = ({ profileImage }: AnimatedProfileProps) => {
   }, []); // Empty dependency array since skillIcons is now constant
 
   useEffect(() => {
-    // Initial delay to wait for fade-in animations
+    // Only start animations if image is loaded
+    if (!isImageLoaded) return;
+
     const initialDelay = setTimeout(() => {
-      // Select first random icon after fade-in
       const firstIndex = Math.floor(Math.random() * 5);
       setEnlargedIcon(firstIndex);
       setLastSelected(firstIndex);
-    }, 3000); // Wait for initial fade-in animations
+    }, 3000);
 
     const selectNewIcon = () => {
       let randomIndex: number;
@@ -97,7 +99,7 @@ const AnimatedProfile = ({ profileImage }: AnimatedProfileProps) => {
       clearTimeout(initialDelay);
       clearInterval(interval);
     };
-  }, [lastSelected]);
+  }, [lastSelected, isImageLoaded]);
 
   return (
     <div className="relative w-80 h-80">
@@ -109,24 +111,27 @@ const AnimatedProfile = ({ profileImage }: AnimatedProfileProps) => {
           fill
           className="rounded-full object-cover"
           priority
+          onLoad={() => setTimeout(() => setIsImageLoaded(true), 500)}
         />
       </div>
 
-      {/* Floating Icons */}
-      <div
-        className="absolute inset-0 flex items-center justify-center"
-        style={{ animation: `rotate 20s linear infinite` }}
-      >
-        {visibleIcons.map((icon, index) => (
-          <SkillIcon
-            key={icon}
-            icon={icon}
-            delay={index * 0.3}
-            index={index}
-            isEnlarged={enlargedIcon === index}
-          />
-        ))}
-      </div>
+      {/* Floating Icons - Only render when image is loaded */}
+      {isImageLoaded && (
+        <div
+          className="absolute inset-0 flex items-center justify-center"
+          style={{ animation: `rotate 20s linear infinite` }}
+        >
+          {visibleIcons.map((icon, index) => (
+            <SkillIcon
+              key={icon}
+              icon={icon}
+              delay={index * 0.3}
+              index={index}
+              isEnlarged={enlargedIcon === index}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
