@@ -12,10 +12,14 @@ const skillIcons = [
 ];
 
 interface AnimatedProfileProps {
-  profileImage: string | StaticImageData; // Profile image source
+  profileImage: string | StaticImageData;
+  size?: string;
 }
 
-const AnimatedProfile = ({ profileImage }: AnimatedProfileProps) => {
+const AnimatedProfile = ({
+  profileImage,
+  size = "w-80 h-80",
+}: AnimatedProfileProps) => {
   // ===== State Management =====
   const [visibleIcons, setVisibleIcons] = useState<string[]>([]); // Currently displayed icons
   const [enlargedIcon, setEnlargedIcon] = useState<number | null>(null); // Index of enlarged icon
@@ -64,7 +68,7 @@ const AnimatedProfile = ({ profileImage }: AnimatedProfileProps) => {
   }, [lastSelected, isImageLoaded]);
 
   return (
-    <div className="relative w-80 h-80">
+    <div className={`relative ${size}`}>
       {/* Profile Image Container */}
       <div className="relative w-full h-full">
         <Image
@@ -91,6 +95,7 @@ const AnimatedProfile = ({ profileImage }: AnimatedProfileProps) => {
               delay={index * 0.3}
               index={index}
               isEnlarged={enlargedIcon === index}
+              containerSize="25vw"
             />
           ))}
         </div>

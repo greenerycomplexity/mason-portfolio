@@ -45,7 +45,10 @@ const Hero = () => {
           </div>
 
           <div className="flex justify-center">
-            <AnimatedProfile profileImage={ProfileImage} />
+            <AnimatedProfile
+              profileImage={ProfileImage}
+              size="w-[25vw] h-[25vw] max-w-[320px] max-h-[320px]"
+            />
           </div>
         </div>
       </div>

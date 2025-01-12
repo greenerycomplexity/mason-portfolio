@@ -2,30 +2,45 @@ import React from "react";
 import Image from "next/image";
 
 interface SkillIconProps {
-  icon: string; // Path to icon SVG
-  delay: number; // Animation delay in seconds
-  index: number; // Position index (0-4) for circular placement
-  isEnlarged: boolean; // Whether this icon is currently enlarged
+  icon: string;
+  delay: number;
+  index: number;
+  isEnlarged: boolean;
+  containerSize: string;
 }
 
-const SkillIcon = ({ icon, delay, index, isEnlarged }: SkillIconProps) => {
+const SkillIcon = ({
+  icon,
+  delay,
+  index,
+  isEnlarged,
+  containerSize,
+}: SkillIconProps) => {
+  // Extract the numeric value from containerSize (e.g., "25vw" -> 25)
+  const containerVW = parseInt(containerSize.match(/\d+/)?.[0] || "0");
+
+  // Calculate radius as a percentage of container size
+  const radiusScale = 0.75; // Adjust this value to change orbit size
+  const radius = `${containerVW * radiusScale}vw`;
+
+  // Calculate icon sizes relative to container
+  const normalSize = `${containerVW * 0.35}vw`; // Increased from 0.25 (35% of container)
+  const enlargedSize = `${containerVW * 0.5}vw`; // Increased from 0.4 (50% of container)
+  const sizeClass = isEnlarged ? enlargedSize : normalSize;
+
   // Calculate position on circle perimeter
   const angle = (index * (360 / 5)) % 360;
-  const radius = 250; // Distance from center in pixels
-  const initialX = radius * Math.cos((angle * Math.PI) / 180);
-  const initialY = radius * Math.sin((angle * Math.PI) / 180);
-
-  // Dynamic sizing based on enlarged state
-  const sizeClass = isEnlarged ? "w-40 h-40" : "w-24 h-24";
 
   return (
     <div
-      className={`absolute ${sizeClass} transition-all duration-500 ease-in-out opacity-0`}
+      className="absolute transition-all duration-500 ease-in-out opacity-0"
       style={{
         animation: `fadeIn 0.7s ${delay}s forwards`,
         left: "50%",
         top: "50%",
-        transform: `translate(${initialX}px, ${initialY}px) translate(-50%, -50%)`,
+        width: sizeClass,
+        height: sizeClass,
+        transform: `rotate(${angle}deg) translateX(${radius}) rotate(-${angle}deg) translate(-50%, -50%)`,
       }}
     >
       {/* Counter-rotate to keep icons upright while parent rotates */}
@@ -33,8 +48,8 @@ const SkillIcon = ({ icon, delay, index, isEnlarged }: SkillIconProps) => {
         <Image
           src={icon}
           alt="Skill icon"
-          width={isEnlarged ? 160 : 80}
-          height={isEnlarged ? 160 : 80}
+          width={160}
+          height={160}
           className="w-full h-full object-contain transition-all duration-500"
         />
       </div>
