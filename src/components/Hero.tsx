@@ -6,7 +6,7 @@ import AnimatedProfile from "./AnimatedProfile";
 
 const Hero = () => {
   return (
-    <div className="min-h-screen bg-white flex items-center px-8">
+    <div id="story" className="min-h-screen bg-white flex items-center px-8">
       <div className="max-w-6xl mx-auto w-full">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="text-center md:text-left">
@@ -39,18 +39,6 @@ const Hero = () => {
               </a>
             </div>
           </div>
-
-          {/* <div className="flex justify-center">
-            <div className="relative w-80 h-80 hidden md:block">
-              <Image
-                src={ProfileImage}
-                alt="Profile picture"
-                fill
-                className="rounded-full object-cover"
-                priority
-              />
-            </div>
-          </div> */}
 
           <div className="flex justify-center">
             <AnimatedProfile profileImage={ProfileImage} />
