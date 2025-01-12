@@ -49,23 +49,6 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-8">Let's Connect</h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Currently seeking UX Engineer roles in Australia starting February
-            2025
-          </p>
-          <a
-            href="mailto:hsm.cao@gmail.com"
-            className="inline-block bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-600 transition-colors"
-          >
-            Get in Touch
-          </a>
-        </div>
-      </section>
     </div>
   );
 };
