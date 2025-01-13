@@ -55,7 +55,7 @@ const Header = () => {
    */
   const getLinkClasses = (href: string) => {
     const isActive = activeSection === href.substring(1);
-    return `flex items-center px-4 py-1 h-10 rounded-full transition-all duration-300 ease-in-out ${
+    return `flex items-center px-2 font-sans py-1 h-10 rounded-full transition-all duration-300 ease-in-out ${
       isActive
         ? "text-black font-semibold border-2 border-gray-200 text-sm px-8"
         : "text-gray-500 hover:text-gray-900 font-semibold text-sm"
@@ -64,12 +64,19 @@ const Header = () => {
 
   // --- Render Component ---
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 bg-white shadow-md rounded-full z-50 border h-14">
-      <div className="px-4">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 bg-white shadow-md rounded-full z-50 border h-14 w-[575px]">
+      <div className="px-6">
         {/* Main Navigation Container */}
-        <div className="flex justify-center items-center py-2">
+        <div className="flex items-center py-2">
+          {/* Heading - Fixed width container */}
+          <div className="hidden md:block w-[100px] ">
+            <h1 className="text-lg font-sans font-semibold tracking-tight">
+              Mason Cao
+            </h1>
+          </div>
+
           {/* Desktop Navigation - Hidden on mobile */}
-          <div className="hidden md:flex items-center justify-center space-x-4">
+          <div className="hidden md:flex items-center justify-center space-x-4 flex-1">
             {navItems.map((item) => (
               <a
                 key={item.href}
