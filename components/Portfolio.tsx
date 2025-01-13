@@ -2,6 +2,8 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ProjectSection from "@/components/ProjectSection";
+import Experience from "@/components/ExperienceSection";
+import Contact from "@/components/ContactSection";
 
 import RMIT from "/public/assets/images/RMIT.png";
 import MorningDew from "/public/assets/images/MorningDew.png";
@@ -30,8 +32,9 @@ const Portfolio = () => {
 
       {/* Add padding-top to account for fixed header */}
       <Hero />
-
       <ProjectSection projects={projects} />
+      <Experience />
+      <Contact />
     </div>
   );
 };

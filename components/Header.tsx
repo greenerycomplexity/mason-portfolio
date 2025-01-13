@@ -65,7 +65,7 @@ const Header = () => {
   // --- Render Component ---
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 bg-white shadow-md rounded-full z-50 border h-14">
-      <div className="px-4 mx-5">
+      <div className="px-4">
         {/* Main Navigation Container */}
         <div className="flex justify-center items-center py-2">
           {/* Desktop Navigation - Hidden on mobile */}
