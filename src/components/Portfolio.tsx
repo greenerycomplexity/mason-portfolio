@@ -4,22 +4,24 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ProjectSection from "@/components/ProjectSection";
 
-import Boeing from "/public/assets/images/Boeing.png";
+import RMIT from "/public/assets/images/RMIT.png";
 import MorningDew from "/public/assets/images/MorningDew.png";
 
 const Portfolio = () => {
   const projects = [
     {
       title: "MorningDew",
-      description: "ADHD-focused morning routine tracker built with SwiftUI...",
+      description:
+        "An ADHD-focused morning routine tracker built with SwiftUI.",
       tags: ["Apple", "WWDC24", "iOS", "SwiftUI", "Accessibility"],
       image: MorningDew,
     },
     {
-      title: "Boeing x RMIT Activator Hackathon",
-      description: "Developed ergonomic solutions for Boeing's factory...",
-      tags: ["Innovation", "UX Design"],
-      image: Boeing,
+      title: "Capstone - SeeMySmile VR",
+      description:
+        "An interactive VR program helping children with autism recognize and understand facial expressions.",
+      tags: ["UX Design", "VR", "Unity"],
+      image: RMIT,
     },
   ];
 
