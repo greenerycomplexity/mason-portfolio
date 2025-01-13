@@ -8,7 +8,7 @@ const LINKEDIN_URL = "https://www.linkedin.com/in/caohaison/";
 
 const Hero = () => {
   return (
-    <div id="story" className="min-h-screen bg-white flex items-center px-8">
+    <div id="story" className="min-h-screen flex items-center px-8">
       <div className="max-w-6xl mx-auto w-full">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="text-center md:text-left">
@@ -36,7 +36,7 @@ const Hero = () => {
                 href={LINKEDIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-white text-black border border-black rounded-full text-sm font-medium hover:bg-gray-100 transition-colors inline-flex items-center gap-1"
+                className="px-6 py-3 text-black border border-black rounded-full text-sm font-medium hover:bg-gray-100 transition-colors inline-flex items-center gap-1"
               >
                 Get in touch
                 <ArrowRight size={16} className="rotate-[-45deg]" />
