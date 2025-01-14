@@ -82,13 +82,18 @@ const LandscapeModal: React.FC<LandscapeModalProps> = ({
                 WebkitOverflowScrolling: "touch",
                 scrollBehavior: "smooth",
                 overscrollBehavior: "contain",
+                scrollSnapType: "x mandatory",
               }}
             >
               {project.images.map((image, index) => (
                 <div
                   key={index}
                   className="w-full flex-shrink-0 relative mx-3 first:ml-8 last:mr-8 rounded-xl overflow-hidden"
-                  style={{ aspectRatio: "16/9" }}
+                  style={{
+                    aspectRatio: "16/9",
+                    scrollSnapAlign: "center",
+                    scrollSnapStop: "always",
+                  }}
                 >
                   <Image
                     src={image}

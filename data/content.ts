@@ -34,8 +34,8 @@ export interface AwardItem {
 export const projects: Project[] = [
   {
     title: "MorningDew",
-    description: "An ADHD-focused morning routine tracker built with SwiftUI.",
-    tags: ["Apple", "WWDC24", "iOS", "SwiftUI", "Accessibility"],
+    description: "ADHD-focused morning routine tracker, built with SwiftUI.",
+    tags: ["Apple WWDC24", "iOS", "SwiftUI", "Accessibility"],
     image: MorningDewIcon,
     images: [
       MorningDewHome,
@@ -47,7 +47,7 @@ export const projects: Project[] = [
   {
     title: "Capstone - SeeMySmile VR",
     description:
-      "An interactive VR program helping children with autism recognize and understand facial expressions.",
+      "Interactive VR program helping children with autism recognise and understand facial expressions.",
     tags: ["UX Design", "VR", "Unity"],
     image: RMIT,
     images: [RMIT],

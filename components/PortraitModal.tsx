@@ -82,12 +82,17 @@ const PortraitModal: React.FC<PortraitModalProps> = ({
                 WebkitOverflowScrolling: "touch",
                 scrollBehavior: "smooth",
                 overscrollBehavior: "contain",
+                scrollSnapType: "x mandatory",
               }}
             >
               {project.images.map((image, index) => (
                 <div
                   key={index}
                   className="w-60 h-[520px] flex-shrink-0 relative mx-3 first:ml-8 last:mr-8 rounded-xl overflow-hidden"
+                  style={{
+                    scrollSnapAlign: "center",
+                    scrollSnapStop: "always",
+                  }}
                 >
                   <Image
                     src={image}

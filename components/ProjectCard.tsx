@@ -21,7 +21,7 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     // Card Container
-    <div className="bg-white rounded-2xl shadow-sm border h-full overflow-hidden px-8 pb-16 flex flex-col relative hover:scale-105 duration-300">
+    <div className="bg-white rounded-3xl shadow-sm border h-full overflow-hidden px-8 pb-16 pt-4 flex flex-col relative hover:scale-105 duration-300">
       {/* Image Section */}
       <div className="relative w-full h-40">
         <Image
@@ -46,7 +46,7 @@ const ProjectCard = ({
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="px-4 py-1.5 bg-white text-gray-700 rounded-full text-sm border border-gray-100 truncate max-w-[150px]"
+              className="px-4 py-1.5 bg-white text-gray-700 rounded-full text-sm border-2 border-gray-100 truncate max-w-[150px]"
             >
               {tag}
             </span>
