@@ -1,6 +1,10 @@
 import { StaticImageData } from "next/image";
 import RMIT from "/public/assets/images/RMIT.png";
-import MorningDew from "/public/assets/images/MorningDew.png";
+import MorningDewIcon from "/public/assets/images/MorningDew.png";
+import MorningDewActive from "/public/assets/images/MorningDew-Screenshots/Active.png";
+import MorningDewBreathe from "/public/assets/images/MorningDew-Screenshots/Breathe.png";
+import MorningDewDetail from "/public/assets/images/MorningDew-Screenshots/Detail.png";
+import MorningDewHome from "/public/assets/images/MorningDew-Screenshots/HomeScreen.png";
 
 // Project Types
 export interface Project {
@@ -8,6 +12,7 @@ export interface Project {
   description: string;
   tags: string[];
   image: StaticImageData;
+  images: StaticImageData[];
 }
 
 // Experience Types
@@ -31,7 +36,13 @@ export const projects: Project[] = [
     title: "MorningDew",
     description: "An ADHD-focused morning routine tracker built with SwiftUI.",
     tags: ["Apple", "WWDC24", "iOS", "SwiftUI", "Accessibility"],
-    image: MorningDew,
+    image: MorningDewIcon,
+    images: [
+      MorningDewHome,
+      MorningDewActive,
+      MorningDewDetail,
+      MorningDewBreathe,
+    ],
   },
   {
     title: "Capstone - SeeMySmile VR",
@@ -39,6 +50,7 @@ export const projects: Project[] = [
       "An interactive VR program helping children with autism recognize and understand facial expressions.",
     tags: ["UX Design", "VR", "Unity"],
     image: RMIT,
+    images: [RMIT],
   },
 ];
 

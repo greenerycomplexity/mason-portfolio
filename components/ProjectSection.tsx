@@ -1,5 +1,7 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import ProjectCard from "@/components/ProjectCard";
+import ProjectModal from "@/components/ProjectModal";
 import { StaticImageData } from "next/image";
 
 interface Project {
@@ -7,6 +9,7 @@ interface Project {
   description: string;
   tags: string[];
   image: StaticImageData;
+  images: StaticImageData[];
 }
 
 interface ProjectSectionProps {
@@ -14,6 +17,8 @@ interface ProjectSectionProps {
 }
 
 const ProjectSection: React.FC<ProjectSectionProps> = ({ projects }) => {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
   return (
     <section id="projects" className="py-20">
       <div className="max-w-6xl mx-auto px-6 font-sans">
@@ -26,10 +31,22 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ projects }) => {
               description={project.description}
               tags={project.tags}
               image={project.image}
+              onViewDetails={() => setSelectedProject(project)}
             />
           ))}
         </div>
       </div>
+
+      {selectedProject && (
+        <ProjectModal
+          isOpen={!!selectedProject}
+          onClose={() => setSelectedProject(null)}
+          project={{
+            ...selectedProject,
+            images: selectedProject.images,
+          }}
+        />
+      )}
     </section>
   );
 };

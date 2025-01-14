@@ -2,13 +2,14 @@
 import React from "react";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
+import { Plus } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
   description: string;
   tags: string[];
   image: string | StaticImageData;
-  onClick?: () => void;
+  onViewDetails: () => void;
 }
 
 const ProjectCard = ({
@@ -16,14 +17,11 @@ const ProjectCard = ({
   description,
   tags,
   image,
-  onClick,
+  onViewDetails,
 }: ProjectCardProps) => {
   return (
     // Card Container
-    <div
-      className="bg-white rounded-lg drop-shadow h-full overflow-hidden cursor-pointer transition-all hover:scale-[1.05] p-6 flex flex-col"
-      onClick={onClick}
-    >
+    <div className="bg-white rounded-lg drop-shadow h-full overflow-hidden px-6 pb-12 flex flex-col relative">
       {/* Image Section */}
       <div className="relative w-full h-40">
         <Image
@@ -55,6 +53,17 @@ const ProjectCard = ({
           ))}
         </div>
       </div>
+
+      {/* Plus Button */}
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          onViewDetails();
+        }}
+        className="absolute bottom-4 right-4 w-10 h-10 bg-blue-500 hover:bg-blue-600 duration-200 rounded-full flex items-center justify-center transition-colors"
+      >
+        <Plus className="w-7 h-7 text-white" strokeWidth={2.5} />
+      </button>
     </div>
   );
 };
