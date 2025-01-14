@@ -1,5 +1,5 @@
 import React from "react";
-import { ExperienceItem, AwardItem, experiences, awards } from "@/data/content";
+import { experiences, awards } from "@/data/content";
 
 // Main Experience Component
 const Experience = () => {

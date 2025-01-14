@@ -23,7 +23,9 @@ const Contact = () => {
   return (
     <footer id="contact" className="bg-footer text-white py-16">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-8 text-center">Let's chat!</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">
+          Let&apos;s chat!
+        </h2>
 
         <div className="max-w-3xl mx-auto">
           {/* Social Links */}
