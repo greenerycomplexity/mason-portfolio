@@ -21,7 +21,7 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     // Card Container
-    <div className="bg-white rounded-lg drop-shadow h-full overflow-hidden px-6 pb-12 flex flex-col relative">
+    <div className="bg-white rounded-2xl shadow-sm border h-full overflow-hidden px-8 pb-16 flex flex-col relative hover:scale-105 duration-300">
       {/* Image Section */}
       <div className="relative w-full h-40">
         <Image
@@ -60,7 +60,7 @@ const ProjectCard = ({
           e.stopPropagation();
           onViewDetails();
         }}
-        className="absolute bottom-4 right-4 w-10 h-10 bg-blue-500 hover:bg-blue-600 duration-200 rounded-full flex items-center justify-center transition-colors"
+        className="absolute bottom-4 right-4 w-10 h-10 bg-lime-900 hover:bg-lime-800 duration-200 rounded-full flex items-center justify-center transition-colors"
       >
         <Plus className="w-7 h-7 text-white" strokeWidth={2.5} />
       </button>
