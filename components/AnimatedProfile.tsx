@@ -68,7 +68,7 @@ const AnimatedProfile = ({
   }, [lastSelected, isImageLoaded]);
 
   return (
-    <div className={`relative ${size}`}>
+    <div className={`relative ${size} z-0`}>
       {/* Profile Image Container */}
       <div className="relative w-full h-full">
         <Image

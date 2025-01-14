@@ -11,7 +11,7 @@ const Hero = () => {
     <div id="home" className="min-h-screen flex items-center px-8">
       <div className="max-w-6xl mx-auto w-full">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left z-10 relative">
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
               Mason Cao
               <span className="block text-xl md:text-2xl mt-1">
