@@ -8,7 +8,7 @@ const LINKEDIN_URL = "https://www.linkedin.com/in/caohaison/";
 
 const Hero = () => {
   return (
-    <div id="story" className="min-h-screen flex items-center px-8">
+    <div id="home" className="min-h-screen flex items-center px-8">
       <div className="max-w-6xl mx-auto w-full">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="text-center md:text-left">

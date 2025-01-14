@@ -9,7 +9,7 @@ import { Menu, X } from "lucide-react";
 const Header = () => {
   // --- State Management ---
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [activeSection, setActiveSection] = useState("story");
+  const [activeSection, setActiveSection] = useState("");
 
   // --- Navigation Configuration ---
   const navItems = [
@@ -27,8 +27,13 @@ const Header = () => {
      */
     const handleScroll = () => {
       const sections = ["story", "projects", "experience"];
-      // Calculate trigger point at 1/4 of viewport height
       const triggerPoint = window.innerHeight * 0.25;
+
+      // Check if we're at the top of the page (home section)
+      if (window.scrollY === 0) {
+        setActiveSection(""); // Clear active section when at top
+        return;
+      }
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -64,15 +69,17 @@ const Header = () => {
 
   // --- Render Component ---
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 bg-white shadow-md rounded-full z-50 border h-14 w-[575px]">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 bg-white shadow-md rounded-full z-50 border h-14">
       <div className="px-6">
         {/* Main Navigation Container */}
         <div className="flex items-center py-2">
           {/* Heading - Fixed width container */}
-          <div className="hidden md:block w-[100px] ">
-            <h1 className="text-lg font-sans font-semibold tracking-tight">
-              Mason Cao
-            </h1>
+          <div className="hidden md:block w-[100px] mr-6">
+            <a href="#home" className="hover:text-gray-600 transition-colors">
+              <h1 className="text-lg font-sans font-semibold tracking-tight">
+                Mason Cao
+              </h1>
+            </a>
           </div>
 
           {/* Desktop Navigation - Hidden on mobile */}

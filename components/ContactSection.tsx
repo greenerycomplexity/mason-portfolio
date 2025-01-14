@@ -21,9 +21,9 @@ const Contact = () => {
   ];
 
   return (
-    <footer id="contact" className="bg-black text-white py-16">
+    <footer id="contact" className="bg-footer text-white py-16">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-8 text-center">Get in Touch</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">Let's chat!</h2>
 
         <div className="max-w-3xl mx-auto">
           {/* Social Links */}
@@ -34,7 +34,7 @@ const Contact = () => {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors"
+                className="flex items-center gap-2 text-gray-100 hover:text-blue-400 transition-colors"
               >
                 {link.icon}
               </a>
@@ -42,8 +42,11 @@ const Contact = () => {
           </div>
 
           {/* Copyright */}
-          <div className="text-center text-gray-400 mt-8">
+          <div className="text-center text-gray-100 mt-8">
             <p>Mason Cao © 2025</p>
+            <p className="text-sm mt-2">
+              Built with Next.js. Deployed with Vercel.
+            </p>
           </div>
         </div>
       </div>
