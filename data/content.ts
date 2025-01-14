@@ -1,10 +1,21 @@
 import { StaticImageData } from "next/image";
-import RMIT from "/public/assets/images/RMIT.png";
-import MorningDewIcon from "/public/assets/images/MorningDew.png";
+import RMIT from "/public/assets/images/RMIT-Screenshots/RMIT-Preview.png";
+import RMITDemo from "/public/assets/images/RMIT-Screenshots/Test Demo on Client - 1.jpg";
+import RMITInterface from "/public/assets/images/RMIT-Screenshots/Recording User Interface - 2.png";
+import RMITEyeCapture from "/public/assets/images/RMIT-Screenshots/Eye Capture Device - 3.jpg";
+import RMITEyeTracking from "/public/assets/images/RMIT-Screenshots/Eye Pattern Tracking - 4.png";
+import RMITHistory from "/public/assets/images/RMIT-Screenshots/Capture History - 5.png";
+import MorningDewIcon from "/public/assets/images/MorningDew-Screenshots/MorningDew-Preview.png";
 import MorningDewActive from "/public/assets/images/MorningDew-Screenshots/Active.png";
 import MorningDewBreathe from "/public/assets/images/MorningDew-Screenshots/Breathe.png";
 import MorningDewDetail from "/public/assets/images/MorningDew-Screenshots/Detail.png";
 import MorningDewHome from "/public/assets/images/MorningDew-Screenshots/HomeScreen.png";
+import Soil1 from "/public/assets/images/Soil-Screenshots/Soil-1.jpg";
+import Soil2 from "/public/assets/images/Soil-Screenshots/Soil-2.jpg";
+import Soil3 from "/public/assets/images/Soil-Screenshots/Soil-3.jpg";
+import Soil4 from "/public/assets/images/Soil-Screenshots/Soil-4.jpg";
+import Soil5 from "/public/assets/images/Soil-Screenshots/Soil-5.jpg";
+import SoilPreview from "/public/assets/images/Soil-Screenshots/Soil-Preview.jpg";
 
 // Project Types
 export interface Project {
@@ -44,13 +55,28 @@ export const projects: Project[] = [
       MorningDewBreathe,
     ],
   },
+
   {
-    title: "Capstone - SeeMySmile VR",
+    title: "Capstone - SeeMySmile2",
     description:
       "Interactive VR program helping children with autism recognise and understand facial expressions.",
     tags: ["UX Design", "VR", "Unity"],
     image: RMIT,
-    images: [RMIT],
+    images: [
+      RMITDemo,
+      RMITInterface,
+      RMITEyeCapture,
+      RMITEyeTracking,
+      RMITHistory,
+    ],
+  },
+  {
+    title: "Soil Website",
+    description:
+      "Modern ecommerce platform for organic produce with seamless shopping experience.",
+    tags: ["ReactJS", "TailwindCSS", "UI Design"],
+    image: SoilPreview,
+    images: [Soil1, Soil2, Soil3, Soil4, Soil5],
   },
 ];
 

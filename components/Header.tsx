@@ -16,7 +16,7 @@ const Header = () => {
     { href: "#story", label: "Story" },
     { href: "#projects", label: "Projects" },
     { href: "#experience", label: "Experience" },
-    { href: "#contact", label: "Contact" },
+    // { href: "#contact", label: "Contact" },
   ];
 
   // --- Scroll Handler ---
