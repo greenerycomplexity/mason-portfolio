@@ -9,7 +9,7 @@ const Experience = () => {
 
   return (
     <section id="experience" className="py-20 bg-white font-sans">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6 text-black">
         {/* Section Header */}
         <h2 className="text-5xl font-bold mb-12">Experience</h2>
 

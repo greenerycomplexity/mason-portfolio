@@ -76,7 +76,7 @@ const Header = () => {
           {/* Heading - Fixed width container */}
           <div className="hidden md:block w-[100px] mr-6">
             <a href="#home" className="hover:text-gray-600 transition-colors">
-              <h1 className="text-lg font-sans font-semibold tracking-tight">
+              <h1 className="text-lg font-sans font-semibold tracking-tight text-black">
                 Mason Cao
               </h1>
             </a>

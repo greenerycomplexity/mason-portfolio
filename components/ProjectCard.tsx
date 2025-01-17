@@ -37,7 +37,7 @@ const ProjectCard = ({
       </div>
 
       {/* Content Section */}
-      <div className="mt-4 flex flex-col flex-1">
+      <div className="mt-4 flex flex-col flex-1 text-black">
         {/* Project Title */}
         <h3 className="text-xl font-bold mb-3 truncate">{title}</h3>
 

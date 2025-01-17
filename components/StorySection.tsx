@@ -4,7 +4,7 @@ const StorySection: React.FC = () => {
   return (
     <section id="story" className="py-20">
       <div className="max-w-6xl mx-auto px-6 font-sans">
-        <h2 className="text-5xl font-bold mb-8">About me!</h2>
+        <h2 className="text-5xl font-bold mb-8 text-black">About me!</h2>
         <div className="text-lg text-gray-600 max-w-4xl">
           <p className="mb-6">
             I&apos;m a recent Computer Science graduate from RMIT University,

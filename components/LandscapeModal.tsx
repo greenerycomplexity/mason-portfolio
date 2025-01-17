@@ -50,6 +50,7 @@ const LandscapeModal: React.FC<LandscapeModalProps> = ({
       className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center transition-opacity duration-500"
       onClick={onClose}
     >
+      {/* Modal Container */}
       <div
         ref={containerRef}
         className={`bg-white rounded-lg w-[95vw] max-w-5xl max-h-[90vh] overflow-hidden transform transition-all duration-500 relative ${
@@ -57,6 +58,7 @@ const LandscapeModal: React.FC<LandscapeModalProps> = ({
         }`}
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Close Button */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 z-10 bg-footer p-3 m-2 rounded-full text-gray-400 hover:text-gray-200 transition-colors"
@@ -64,7 +66,8 @@ const LandscapeModal: React.FC<LandscapeModalProps> = ({
           <X size={24} strokeWidth={3} />
         </button>
 
-        <div className="px-16 pt-16 pb-8">
+        {/* Project Title Section */}
+        <div className="px-16 pt-16 pb-8 text-black">
           <div className="flex justify-between items-center">
             <h2 className="text-5xl font-sans font-extrabold">
               {project.title}
@@ -72,9 +75,10 @@ const LandscapeModal: React.FC<LandscapeModalProps> = ({
           </div>
         </div>
 
-        {/* Carousel Section - 16:9 Aspect Ratio */}
+        {/* Image Carousel Section */}
         <div className="relative overflow-hidden">
           <div className="px-8">
+            {/* Carousel Container */}
             <div
               ref={carouselRef}
               className="flex overflow-x-auto scrollbar-hide scroll-smooth -mx-16 px-16"
@@ -85,6 +89,7 @@ const LandscapeModal: React.FC<LandscapeModalProps> = ({
                 scrollSnapType: "x mandatory",
               }}
             >
+              {/* Individual Carousel Items */}
               {project.images.map((image, index) => (
                 <div
                   key={index}
@@ -107,6 +112,7 @@ const LandscapeModal: React.FC<LandscapeModalProps> = ({
             </div>
           </div>
 
+          {/* Carousel Navigation Buttons */}
           <div className="absolute bottom-4 right-20 flex gap-2">
             <button
               onClick={(e) => {
@@ -131,8 +137,10 @@ const LandscapeModal: React.FC<LandscapeModalProps> = ({
           </div>
         </div>
 
+        {/* Project Details Section */}
         <div className="p-16 pt-8">
           <p className="text-gray-700 mb-6">{project.description}</p>
+          {/* Tags Section */}
           <div className="flex flex-wrap gap-2">
             {project.tags.map((tag, index) => (
               <span
