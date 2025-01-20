@@ -21,6 +21,7 @@ import SoilPreview from "/public/assets/images/Soil-Screenshots/Soil-Preview.jpg
 export interface Project {
   title: string;
   description: string;
+  detailedDescription?: string[];
   tags: string[];
   image: StaticImageData;
   images: StaticImageData[];
@@ -46,6 +47,11 @@ export const projects: Project[] = [
   {
     title: "MorningDew",
     description: "ADHD-focused morning routine tracker, built with SwiftUI.",
+    detailedDescription: [
+      "This iOS app leverages the latest SwiftUI framework to deliver a seamless and intuitive user experience. With native support for Dark Mode and Dynamic Type, the app follows Apple's Human Interface Guidelines to ensure accessibility and visual consistency across all iOS devices. The app features smooth animations, haptic feedback, and widget support for iOS 14+, allowing users to access key functionality right from their Home Screen.",
+      "Under the hood, the app utilizes efficient background processing and local caching to maintain responsiveness even under heavy load. The architecture follows the MVVM pattern, with clear separation of concerns and robust error handling. Integration with Core Data enables offline functionality, while CloudKit synchronization ensures user data remains consistent across multiple devices.",
+      "Security and privacy were paramount in the development process. The app implements biometric authentication, end-to-end encryption for sensitive data, and follows Apple's strict privacy guidelines. Regular security audits and penetration testing ensure the highest level of protection for user information, while still maintaining a smooth and unobtrusive experience that iOS users expect.",
+    ],
     tags: ["Apple WWDC24", "iOS", "SwiftUI", "Accessibility"],
     image: MorningDewIcon,
     images: [
