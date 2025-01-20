@@ -1,8 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import ProjectCard from "@/components/ProjectCard";
-import PortraitModal from "@/components/PortraitModal";
-import LandscapeModal from "@/components/LandscapeModal";
+import ProjectCard from "./ProjectCard";
+import ProjectModal from "./ProjectModal";
 import { StaticImageData } from "next/image";
 
 interface Project {
@@ -41,21 +40,14 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ projects }) => {
       </div>
 
       {selectedProject && (
-        <>
-          {isPortraitProject(selectedProject.title) ? (
-            <PortraitModal
-              isOpen={!!selectedProject}
-              onClose={() => setSelectedProject(null)}
-              project={selectedProject}
-            />
-          ) : (
-            <LandscapeModal
-              isOpen={!!selectedProject}
-              onClose={() => setSelectedProject(null)}
-              project={selectedProject}
-            />
-          )}
-        </>
+        <ProjectModal
+          isOpen={!!selectedProject}
+          onClose={() => setSelectedProject(null)}
+          project={selectedProject}
+          layout={
+            isPortraitProject(selectedProject.title) ? "portrait" : "landscape"
+          }
+        />
       )}
     </section>
   );
