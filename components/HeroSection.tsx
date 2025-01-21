@@ -6,23 +6,22 @@ import AnimatedProfile from "./AnimatedProfile";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/caohaison/";
 
-const Hero = () => {
+const HeroSection = () => {
   return (
     <div id="home" className="min-h-screen flex items-center px-8">
       <div className="max-w-6xl mx-auto w-full">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="text-center md:text-left z-10 relative">
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
+            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-2 text-center md:text-left">
               Mason Cao
-              <span className="block text-xl md:text-2xl mt-1">
-                Software Engineer and Visual Designer
-              </span>
             </h1>
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 text-center md:text-left">
+              Software Engineer and Visual Designer
+            </h2>
 
-            <p className="text-lg md:text-l text-gray-600 mx-auto md:mx-0 max-w-2xl mb-8 mr-10">
-              I create software that is both aesthetically pleasing and
-              emotionally resonant, incorporating user interfaces that are
-              intuitive and user-friendly.
+            <p className="text-lg md:text-l text-gray-600 mx-auto md:mx-0 max-w-2xl mb-8 mr-10 text-center md:text-left">
+              I build software that looks great and feels right, focusing on
+              making intuitive and accessible user interfaces.
             </p>
 
             <div className="flex flex-row gap-4 mt-8 justify-center md:justify-start">
@@ -56,4 +55,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HeroSection;

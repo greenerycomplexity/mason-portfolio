@@ -1,6 +1,6 @@
 "use client";
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import HeroSection from "@/components/HeroSection";
 import ProjectSection from "@/components/ProjectSection";
 import Experience from "@/components/ExperienceSection";
 import Contact from "@/components/ContactSection";
@@ -13,7 +13,7 @@ const Portfolio = () => {
       <Header />
 
       {/* Add padding-top to account for fixed header */}
-      <Hero />
+      <HeroSection />
       <StorySection />
       <ProjectSection projects={projects} />
       <Experience />
