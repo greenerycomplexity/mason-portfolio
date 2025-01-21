@@ -48,9 +48,8 @@ export const projects: Project[] = [
     title: "MorningDew",
     description: "ADHD-focused morning routine tracker, built with SwiftUI.",
     detailedDescription: [
-      "This iOS app leverages the latest SwiftUI framework to deliver a seamless and intuitive user experience. With native support for Dark Mode and Dynamic Type, the app follows Apple's Human Interface Guidelines to ensure accessibility and visual consistency across all iOS devices. The app features smooth animations, haptic feedback, and widget support for iOS 14+, allowing users to access key functionality right from their Home Screen.",
-      "Under the hood, the app utilizes efficient background processing and local caching to maintain responsiveness even under heavy load. The architecture follows the MVVM pattern, with clear separation of concerns and robust error handling. Integration with Core Data enables offline functionality, while CloudKit synchronization ensures user data remains consistent across multiple devices.",
-      "Security and privacy were paramount in the development process. The app implements biometric authentication, end-to-end encryption for sensitive data, and follows Apple's strict privacy guidelines. Regular security audits and penetration testing ensure the highest level of protection for user information, while still maintaining a smooth and unobtrusive experience that iOS users expect.",
+      "MorningDew is an iOS app I developed that won the Apple Swift Student Challenge 2024. Born from my personal struggles with ADHD and time management, it transforms chaotic morning routines into structured, achievable tasks. The app's core concept is simple: users input their morning tasks and typical duration, then MorningDew displays one task at a time with a visual timer, complemented by high-intensity music to maintain momentum, and loud check-in alarms to prevent distractions.",
+      "Beyond acting as a tool to manage my morning routines, MorningDew represents a broader mission: to empower individuals with ADHD in their daily lives and demonstrate that with the right level of support, neurodivergent people can excel in any environment. Through MorningDew, I hope it showcases not only my technical skills in iOS development, but also my commitment to creating technology that makes a meaningful difference.",
     ],
     tags: ["Apple WWDC24", "iOS", "SwiftUI", "Accessibility"],
     image: MorningDewIcon,
@@ -66,7 +65,12 @@ export const projects: Project[] = [
     title: "Capstone - SeeMySmile2",
     description:
       "Interactive VR program helping children with autism recognise and understand facial expressions.",
-    tags: ["UX Design", "VR", "Unity"],
+    detailedDescription: [
+      "The program creates a controlled, distraction-free environment where users can practice identifying and interpreting various emotional expressions displayed by 3D avatar-based faces. This application integrates eye-tracking functionality, enabling researchers and facilitators to gain insights into how a patient scan and process facial expressions.",
+      "As the UI/UX lead for the project, my primary responsibility centered on completely reimagining and implementing the user interface to enhance overall usability and accessibility. The redesign focused on creating an intuitive and clean layout that simplified a VR agent's emotion selection and intensity control. I developed new features including a comprehensive session recording system with playback controls, an improved agent preview and selection system, and an organized capture history interface for reviewing past sessions.",
+      "Turning an originally complex interface to a streamlined, user-friendly design represented a significant improvement in the program's accessibility, and SeeMySmile2 had evolved into a more effective tool for emotional intelligence training and research.",
+    ],
+    tags: ["UI/UX Design", "Figma", "VR", "Unity"],
     image: RMIT,
     images: [
       RMITDemo,
@@ -80,6 +84,14 @@ export const projects: Project[] = [
     title: "Soil Website",
     description:
       "Modern ecommerce platform for organic produce with seamless shopping experience.",
+    detailedDescription: [
+      "This website was created as part of an assignment for my Full Stack Development course at RMIT. I worked in a pair with another student to develop a comprehensive full-stack e-commerce platform called SOIL. The platform is designed to serve as an online marketplace where customers can purchase organic produce.",
+      "The implementation features both a customer-facing marketplace and a separate admin dashboard. The system was built using React JS for the frontend and TailwindCSS for styling, Node.js/Express for the middleware, and a cloud-based MySQL database provided by RMIT for data persistence.",
+      "The system employed two distinct architectural approaches. I used REST API for the main, customer-facing site, which provides standard CRUD operations. For the admin dashboard, I opted for GraphQL because it enables real-time subscriptions, which in turn provides real-time analytics and monitoring for user purchases.",
+      'One of the most critical design decisions involved modeling the shopping cart system. Rather than using a simple one-to-many relationship between users and products, we implemented a dedicated CartItems table that tracked the relationship between users, products, and quantities. This approach solved multiple challenges by allowing multiple users to have the same product in their carts simultaneously, separating the concept of "quantity in cart" from "quantity in stock" for any given product, and enabling detailed analytics on user shopping behavior and cart abandonment patterns.',
+      "The system also implemented a token-based authentication system with password hashing and role-based access control. User sessions were managed through localStorage with extra API validation to ensure blocked users couldn't perform restricted actions (e.g logging in, finalise a purchase, etc), even if they had valid tokens.",
+      "In terms of codebase size and complexity, the project comprised two separate React frontend applications totaling approximately 5,000 lines of code, complemented by backend REST and GraphQL APIs spanning roughly 3,000 lines. The database architecture consisted of 8 interconnected tables supporting core functionalities including user authentication, product management, shopping cart operations, a review system, real-time analytics, and administrative moderation tools.",
+    ],
     tags: ["ReactJS", "TailwindCSS", "UI Design"],
     image: SoilPreview,
     images: [Soil1, Soil2, Soil3, Soil4, Soil5],
