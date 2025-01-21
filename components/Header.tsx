@@ -69,57 +69,84 @@ const Header = () => {
 
   // --- Render Component ---
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 bg-white shadow-md rounded-full z-50 border h-14">
-      <div className="px-6">
-        {/* Main Navigation Container */}
-        <div className="flex items-center py-2">
-          {/* Heading - Fixed width container */}
-          <div className="hidden md:block w-[100px] mr-6">
-            <a href="#home" className="hover:text-gray-600 transition-colors">
-              <h1 className="text-lg font-sans font-semibold tracking-tight text-black">
-                Mason Cao
-              </h1>
-            </a>
-          </div>
-
-          {/* Desktop Navigation - Hidden on mobile */}
-          <div className="hidden md:flex items-center justify-center space-x-4 flex-1">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className={getLinkClasses(item.href)}
-              >
-                {item.label}
+    <nav className="fixed top-4 z-50 w-full px-4">
+      {/* Desktop Navigation */}
+      <div className="hidden md:block left-1/2 bg-white shadow-md rounded-full border h-14 w-fit mx-auto">
+        <div className="px-6">
+          <div className="flex items-center py-2">
+            <div className="w-[100px] mr-6">
+              <a href="#home" className="hover:text-gray-600 transition-all">
+                <h1 className="text-lg font-sans font-semibold tracking-tight text-black">
+                  Mason Cao
+                </h1>
               </a>
-            ))}
-          </div>
+            </div>
 
-          {/* Mobile Menu Toggle - Visible only on mobile */}
-          <button
-            className="md:hidden flex items-center justify-center"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X /> : <Menu />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation Menu - Conditionally rendered */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="flex items-center justify-center space-x-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className={`block ${getLinkClasses(item.href)}`}
+                  className={getLinkClasses(item.href)}
                 >
                   {item.label}
                 </a>
               ))}
             </div>
           </div>
-        )}
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
+      <div className="md:hidden absolute top-0 right-4">
+        <button
+          className="bg-white p-3 rounded-full shadow-md border transition-all duration-200 hover:scale-105 active:scale-95"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+
+        {/* Mobile Menu Dropdown */}
+        <div
+          className={`absolute top-16 right-0 w-40 bg-white rounded-2xl shadow-lg border overflow-hidden transition-all duration-300 origin-top-right ${
+            isMenuOpen
+              ? "opacity-100 scale-100 translate-y-0"
+              : "opacity-0 scale-95 -translate-y-4 pointer-events-none"
+          }`}
+        >
+          <div className="p-4 space-y-2">
+            <a
+              href="#home"
+              className="block text-right py-2 px-4 rounded-lg hover:bg-gray-50 transition-all duration-200"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <h1 className="text-lg font-sans font-semibold tracking-tight text-black">
+                Mason Cao
+              </h1>
+            </a>
+            {navItems.map((item, index) => {
+              const isActive = activeSection === item.href.substring(1);
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className={`block text-right py-2 px-4 rounded-lg font-semibold transition-all duration-300 ${
+                    isActive
+                      ? "bg-gray-100 text-black "
+                      : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
+                  } ${isMenuOpen ? "animate-slideIn" : ""}`}
+                  onClick={() => setIsMenuOpen(false)}
+                  style={{
+                    animationDelay: `${index * 50}ms`,
+                  }}
+                >
+                  {item.label}
+                </a>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </nav>
   );
