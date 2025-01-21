@@ -23,7 +23,7 @@ const ProjectCard = ({
     // Card Container
     <button
       onClick={onViewDetails}
-      className="w-full text-left bg-white rounded-3xl shadow-sm border h-full overflow-hidden px-8 pb-16 pt-4 flex flex-col relative hover:scale-105 duration-300"
+      className="w-full text-left bg-white rounded-2xl sm:rounded-3xl shadow-sm border h-full overflow-hidden px-4 sm:px-6 md:px-8 pb-12 sm:pb-14 md:pb-16 pt-3 sm:pt-4 flex flex-col relative hover:scale-[1.02] sm:hover:scale-[1.03] md:hover:scale-105 duration-300"
     >
       {/* Image Section */}
       <div className="relative w-full h-40">
@@ -37,12 +37,14 @@ const ProjectCard = ({
       </div>
 
       {/* Content Section */}
-      <div className="mt-4 flex flex-col flex-1 text-black">
+      <div className="mt-4 flex flex-col flex-1 text-black ">
         {/* Project Title */}
-        <h3 className="text-xl font-bold mb-3 truncate">{title}</h3>
+        <h3 className="text-xl sm:text-lg md:text-xl lg:text-xl pr-4 font-bold truncate">
+          {title}
+        </h3>
 
         {/* Project Description */}
-        <p className="text-gray-600 mb-4 line-clamp-3">{description}</p>
+        <p className="text-gray-600 mb-4 line-clamp-3 mt-2">{description}</p>
 
         {/* Tags Section */}
         <div className="flex flex-wrap gap-2">
