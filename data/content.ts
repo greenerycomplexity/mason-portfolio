@@ -103,7 +103,7 @@ export const experiences: ExperienceItem[] = [
   {
     title: "Peer Mentor",
     company: "RMIT University",
-    period: "Mar 2024 - Jul 2024 · 5 mos",
+    period: "Mar 2024 - Jul 2024 • 5 mos",
     description: [
       "For the second-year course Software Engineering Fundamentals (IT Systems Design, UML, and Java Unit Testing)",
     ],
@@ -111,7 +111,7 @@ export const experiences: ExperienceItem[] = [
   {
     title: "Technology & Business Development Intern",
     company: "Project Flock",
-    period: "Dec 2023 - Feb 2024 · 3 mos",
+    period: "Dec 2023 - Feb 2024 • 3 mos",
     description: [
       "Developed plans to migrate customer records from Kickstarter to Shopify, then mass-announced these changes through Klaviyo",
       "Supported product photoshoots, thoroughly tested Shopify storefront website for bugs/grammatical errors/accessibility issues before going live",
@@ -120,7 +120,7 @@ export const experiences: ExperienceItem[] = [
   {
     title: "Event Staff",
     company: "Spark Event Group",
-    period: "May 2023 - Dec 2023 · 8 mos",
+    period: "May 2023 - Dec 2023 • 8 mos",
     description: ["Customer Service and Event Planning"],
   },
 ];

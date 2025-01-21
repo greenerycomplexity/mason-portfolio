@@ -12,14 +12,14 @@ const StorySection: React.FC = () => {
             I am a recent Computer Science graduate from RMIT University,
             graduating with Distinction. My passion lies at the intersection of
             technology and user experience design, demonstrated by winning
-            Apple&apos;s Swift Student Challenge with an ADHD accessibility app.
+            Apple&apos;s Swift Student Challenge with an ADHD accessibility app
             🏆
           </p>
           <p>
             As a 21-year-old international student from Vietnam, I bring fresh
             perspectives to software engineering. I combine technical expertise
             with personal insights to create human-centric, accessible solutions
-            that make technology work for everyone. ✨
+            that make technology work for everyone ✨
           </p>
         </div>
       </div>

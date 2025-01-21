@@ -44,7 +44,9 @@ const ProjectCard = ({
         </h3>
 
         {/* Project Description */}
-        <p className="text-gray-600 mb-4 line-clamp-3 mt-2">{description}</p>
+        <p className="text-gray-600 mb-4 line-clamp-3 h-18 mt-2">
+          {description}
+        </p>
 
         {/* Tags Section */}
         <div className="flex flex-wrap gap-2">
