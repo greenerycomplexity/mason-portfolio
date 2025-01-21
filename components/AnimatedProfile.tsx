@@ -18,7 +18,7 @@ interface AnimatedProfileProps {
 
 const AnimatedProfile = ({
   profileImage,
-  size = "w-80 h-80",
+  size = "w-full h-full",
 }: AnimatedProfileProps) => {
   // ===== State Management =====
   const [visibleIcons, setVisibleIcons] = useState<string[]>([]); // Currently displayed icons
@@ -70,7 +70,7 @@ const AnimatedProfile = ({
   return (
     <div className={`relative ${size} z-0`}>
       {/* Profile Image Container */}
-      <div className="relative w-full h-full">
+      <div className="relative w-full h-full scale-125 sm:scale-100">
         <Image
           src={profileImage}
           alt="Profile picture"
@@ -85,7 +85,7 @@ const AnimatedProfile = ({
       {/* Rotating Skill Icons Container */}
       {isImageLoaded && (
         <div
-          className="absolute inset-0 flex items-center justify-center"
+          className="absolute inset-0 flex items-center justify-center max-w-[400px] max-h-[400px] mx-auto"
           style={{ animation: `rotate 20s linear infinite` }}
         >
           {visibleIcons.map((icon, index) => (

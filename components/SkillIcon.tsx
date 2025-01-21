@@ -16,16 +16,29 @@ const SkillIcon = ({
   isEnlarged,
   containerSize,
 }: SkillIconProps) => {
-  // Extract the numeric value from containerSize (e.g., "25vw" -> 25)
   const containerVW = parseInt(containerSize.match(/\d+/)?.[0] || "0");
 
-  // Calculate radius as a percentage of container size
-  const radiusScale = 0.75; // Adjust this value to change orbit size
-  const radius = `${containerVW * radiusScale}vw`;
+  // Calculate actual container size in pixels
+  const maxContainerPx = 400; // Maximum container size in pixels
+  const viewportWidth = typeof window !== "undefined" ? window.innerWidth : 0;
+  const containerPx = Math.min(
+    (viewportWidth * containerVW) / 100,
+    maxContainerPx
+  );
+  const containerPercentage = (containerPx / viewportWidth) * 100;
 
-  // Calculate icon sizes relative to container
-  const normalSize = `${containerVW * 0.35}vw`; // Increased from 0.25 (35% of container)
-  const enlargedSize = `${containerVW * 0.5}vw`; // Increased from 0.4 (50% of container)
+  // Adjust radius scale based on screen size
+  const radiusScale =
+    typeof window !== "undefined" && window.innerWidth < 768
+      ? 1.0 // Larger radius for mobile
+      : 0.75; // Original radius for desktop
+  const radius = `${containerPercentage * radiusScale}vw`;
+
+  // Calculate icon sizes relative to container with max size limit
+  const normalSize = `min(${containerVW * 0.35}vw, ${maxContainerPx * 0.35}px)`;
+  const enlargedSize = `min(${containerVW * 0.45}vw, ${
+    maxContainerPx * 0.45
+  }px)`;
   const sizeClass = isEnlarged ? enlargedSize : normalSize;
 
   // Calculate position on circle perimeter
