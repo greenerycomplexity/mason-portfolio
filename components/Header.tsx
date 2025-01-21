@@ -125,7 +125,7 @@ const Header = () => {
                 Mason Cao
               </h1>
             </a>
-            {navItems.map((item, index) => {
+            {navItems.map((item) => {
               const isActive = activeSection === item.href.substring(1);
               return (
                 <a
@@ -135,11 +135,8 @@ const Header = () => {
                     isActive
                       ? "bg-gray-100 text-black "
                       : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
-                  } ${isMenuOpen ? "animate-slideIn" : ""}`}
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
-                  style={{
-                    animationDelay: `${index * 50}ms`,
-                  }}
                 >
                   {item.label}
                 </a>
