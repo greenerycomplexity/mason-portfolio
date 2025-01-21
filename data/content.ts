@@ -92,7 +92,7 @@ export const projects: Project[] = [
       "The system also implemented a token-based authentication system with password hashing and role-based access control. User sessions were managed through localStorage with extra API validation to ensure blocked users couldn't perform restricted actions (e.g logging in, finalise a purchase, etc), even if they had valid tokens.",
       "In terms of codebase size and complexity, the project comprised two separate React frontend applications totaling approximately 5,000 lines of code, complemented by backend REST and GraphQL APIs spanning roughly 3,000 lines. The database architecture consisted of 8 interconnected tables supporting core functionalities including user authentication, product management, shopping cart operations, a review system, real-time analytics, and administrative moderation tools.",
     ],
-    tags: ["ReactJS", "TailwindCSS", "UI Design"],
+    tags: ["React.js", "TailwindCSS", "Node.js", "MySQL"],
     image: SoilPreview,
     images: [Soil1, Soil2, Soil3, Soil4, Soil5],
   },
