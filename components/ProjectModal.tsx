@@ -63,7 +63,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
       <div className="min-h-full pt-12 sm:p-8 md:p-10 lg:p-12 flex justify-center items-center">
         <div
           ref={containerRef}
-          className={`bg-white rounded-xl w-full max-w-5xl transform transition-all duration-700 ease-in-out text-black ${
+          className={`bg-white sm:rounded-xl rounded-t-xl w-full max-w-5xl transform transition-all duration-700 ease-in-out text-black ${
             isAnimating
               ? "opacity-100 translate-y-0 scale-100"
               : "opacity-0 translate-y-4 scale-95"

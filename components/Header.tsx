@@ -60,7 +60,7 @@ const Header = () => {
    */
   const getLinkClasses = (href: string) => {
     const isActive = activeSection === href.substring(1);
-    return `flex items-center px-2 font-sans py-1 h-10 rounded-full transition-all duration-300 ease-in-out ${
+    return `flex items-center px-2 py-1 h-10 rounded-full transition-all duration-300 ease-in-out ${
       isActive
         ? "text-black font-semibold border-2 border-gray-200 text-sm px-8"
         : "text-gray-500 hover:text-gray-900 font-semibold text-sm"
@@ -76,7 +76,7 @@ const Header = () => {
           <div className="flex items-center py-2">
             <div className="w-[100px] mr-6">
               <a href="#home" className="hover:text-gray-600 transition-all">
-                <h1 className="text-lg font-sans font-semibold tracking-tight text-black">
+                <h1 className="text-lg font-semibold tracking-tight text-black">
                   Mason Cao
                 </h1>
               </a>
@@ -121,7 +121,7 @@ const Header = () => {
               className="block text-right py-2 px-4 rounded-lg hover:bg-gray-50 transition-all duration-200"
               onClick={() => setIsMenuOpen(false)}
             >
-              <h1 className="text-lg font-sans font-semibold tracking-tight text-black">
+              <h1 className="text-lg font-semibold tracking-tight text-black">
                 Mason Cao
               </h1>
             </a>
