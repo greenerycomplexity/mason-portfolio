@@ -67,9 +67,9 @@ const ProjectCard = ({
           e.stopPropagation();
           onViewDetails();
         }}
-        className="absolute bottom-4 right-4 w-10 h-10 bg-lime-900 hover:bg-lime-800 duration-200 rounded-full flex items-center justify-center transition-colors"
+        className="absolute bottom-4 right-4 w-8 h-8 sm:w-10 sm:h-10 bg-lime-900 hover:bg-lime-800 duration-200 rounded-full flex items-center justify-center transition-colors"
       >
-        <Plus className="w-7 h-7 text-white" strokeWidth={2.5} />
+        <Plus className="w-5 h-5 sm:w-7 sm:h-7 text-white" strokeWidth={2.5} />
       </div>
     </button>
   );

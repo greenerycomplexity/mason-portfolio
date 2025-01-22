@@ -4,7 +4,7 @@ const StorySection: React.FC = () => {
   return (
     <section id="story" className="py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-[90%] sm:max-w-[85%] md:max-w-6xl mx-auto px-2 sm:px-6 md:px-8 lg:px-10">
-        <h2 className="text-5xl font-bold mb-8 sm:mb-10 md:mb-12 text-black">
+        <h2 className="text-5xl font-bold mb-8 sm:mb-10 md:mb-12 text-black font-sans">
           About me!
         </h2>
         <div className="text-base sm:text-lg text-gray-600 max-w-[95%] sm:max-w-2xl md:max-w-3xl">
