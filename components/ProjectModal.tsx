@@ -56,7 +56,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
   return (
     <div
       className={`fixed inset-0 z-50 overflow-y-auto transition-all duration-500 ease-in-out text-black ${
-        isAnimating ? "bg-black/75" : "bg-black/0"
+        isAnimating ? "bg-stone-950/70" : "bg-black/0"
       }`}
       onClick={onClose}
     >
