@@ -10,7 +10,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="py-12 sm:py-16 md:py-20 bg-white font-sans lg:py-24"
+      className="py-12 sm:py-16 md:py-20 bg-white font-sans lg:py-24 text-black"
     >
       <div className="max-w-[90%] sm:max-w-[85%] md:max-w-6xl px-4 mx-auto sm:px-6 md:px-8 lg:px-10 font-sans">
         {/* Section Header */}

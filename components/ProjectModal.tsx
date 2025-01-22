@@ -55,7 +55,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
 
   return (
     <div
-      className={`fixed inset-0 z-50 overflow-y-auto transition-all duration-500 ease-in-out ${
+      className={`fixed inset-0 z-50 overflow-y-auto transition-all duration-500 ease-in-out text-black ${
         isAnimating ? "bg-black/75" : "bg-black/0"
       }`}
       onClick={onClose}
@@ -63,7 +63,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
       <div className="min-h-full p-4 sm:p-6 md:p-8 lg:p-10 flex justify-center items-center">
         <div
           ref={containerRef}
-          className={`bg-white rounded-xl w-full max-w-5xl transform transition-all duration-700 ease-in-out ${
+          className={`bg-white rounded-xl w-full max-w-5xl transform transition-all duration-700 ease-in-out text-black ${
             isAnimating
               ? "opacity-100 translate-y-0 scale-100"
               : "opacity-0 translate-y-4 scale-95"
