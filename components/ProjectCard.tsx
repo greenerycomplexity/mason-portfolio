@@ -23,10 +23,10 @@ const ProjectCard = ({
     // Card Container
     <button
       onClick={onViewDetails}
-      className="w-full text-left bg-white rounded-2xl sm:rounded-3xl shadow-sm border h-full overflow-hidden px-4 sm:px-6 md:px-8 pb-12 sm:pb-14 md:pb-16 pt-3 sm:pt-4 flex flex-col relative hover:scale-[1.02] sm:hover:scale-[1.03] md:hover:scale-105 duration-300"
+      className="w-full text-left bg-white rounded-2xl sm:rounded-3xl shadow-sm border h-full overflow-hidden px-4 sm:px-6 md:px-8 pb-12 sm:pb-14 md:pb-16 pt-3 sm:pt-4 flex flex-col relative duration-300 sm:hover:scale-[1.03] md:hover:scale-105"
     >
       {/* Image Section */}
-      <div className="relative w-full h-40">
+      <div className="relative w-full h-28 sm:h-40">
         <Image
           src={image}
           alt={title}
@@ -39,21 +39,21 @@ const ProjectCard = ({
       {/* Content Section */}
       <div className="mt-4 flex flex-col flex-1">
         {/* Project Title */}
-        <h3 className="text-xl sm:text-lg md:text-xl lg:text-xl pr-4 font-bold truncate">
+        <h3 className="text-base sm:text-lg md:text-xl lg:text-xl pr-4 font-bold truncate">
           {title}
         </h3>
 
         {/* Project Description */}
-        <p className="text-gray-600 mb-4 line-clamp-3 h-18 mt-2">
+        <p className="text-sm sm:text-base text-gray-600 mb-4 line-clamp-3 h-18 mt-2">
           {description}
         </p>
 
         {/* Tags Section */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2">
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="px-4 py-1.5 bg-white text-gray-700 rounded-full text-sm border-2 border-gray-100 truncate max-w-[150px]"
+              className="px-3 sm:px-4 py-1 sm:py-1.5 bg-white text-gray-700 rounded-full text-xs sm:text-sm border-2 border-gray-100 truncate max-w-[150px]"
             >
               {tag}
             </span>

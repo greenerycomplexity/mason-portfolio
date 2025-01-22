@@ -141,9 +141,10 @@ export const awards: AwardItem[] = [
     description: "Internationally recognised English proficiency test.",
   },
   {
-    title: "GPA 3.4/4.0",
-    issuer: "RMIT University",
-    date: "Dec 2024",
-    description: "Cumulative GPA of entire Bachelor of Computer Science degree",
+    title: "Boeing Hackathon",
+    issuer: "Boeing & RMIT Activator",
+    date: "Aug 2023",
+    description:
+      "First Runner-Up. Developed and pitched an innovative solution to address ergonomic challenges faced by Boeing's factory workers",
   },
 ];
