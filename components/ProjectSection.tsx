@@ -58,7 +58,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ projects }) => {
       {/* Mobile Carousel - Full width */}
       <div className="sm:hidden w-full">
         <div
-          className="flex overflow-x-auto h-96 snap-x snap-mandatory scrollbar-hide touch-pan-x"
+          className="flex overflow-x-auto overflow-y-visible h-96 snap-x snap-mandatory scrollbar-hide touch-pan-x touch-pan-y"
           onScroll={handleScroll}
         >
           {projects.map((project, index) => (
