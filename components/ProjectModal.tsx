@@ -60,7 +60,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
       }`}
       onClick={onClose}
     >
-      <div className="min-h-full p-4 sm:p-6 md:p-8 lg:p-10 flex justify-center items-center">
+      <div className="min-h-full pt-12 sm:p-8 md:p-10 lg:p-12 flex justify-center items-center">
         <div
           ref={containerRef}
           className={`bg-white rounded-xl w-full max-w-5xl transform transition-all duration-700 ease-in-out text-black ${
@@ -165,7 +165,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
             </div>
           </div>
 
-          <div className="px-6 sm:px-8 md:px-12 lg:px-16 pb-6 sm:pb-8 md:pb-12 lg:pb-16 bg-white rounded-b-xl">
+          <div className="px-6 py-2 sm:px-8 md:px-12 lg:px-16 pb-6 sm:pb-8 md:pb-12 lg:pb-16 bg-white rounded-b-xl">
             {/* Project description */}
             <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6">
               {project.description}

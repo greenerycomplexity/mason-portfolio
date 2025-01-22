@@ -12,7 +12,7 @@ const Experience = () => {
       id="experience"
       className="py-12 sm:py-16 md:py-20 bg-white font-sans lg:py-24 text-black"
     >
-      <div className="max-w-[90%] sm:max-w-[85%] md:max-w-6xl px-4 mx-auto sm:px-6 md:px-8 lg:px-10 font-sans">
+      <div className="max-w-[90%] sm:max-w-[85%] md:max-w-6xl px-2 mx-auto sm:px-6 md:px-8 lg:px-10 font-sans">
         {/* Section Header */}
         <h2 className="text-5xl font-bold mb-8 sm:mb-10 md:mb-12">
           Experience
@@ -23,9 +23,9 @@ const Experience = () => {
           {/* Work Experience Toggle Button */}
           <button
             onClick={() => setExpandedWork(!expandedWork)}
-            className="w-full flex items-center justify-between text-2xl sm:text-3xl md:text-4xl font-semibold p-3 sm:p-4 hover:bg-gray-50 rounded-lg transition-colors"
+            className="w-full flex items-center justify-between font-semibold p-3 sm:p-4 hover:bg-gray-50 rounded-lg transition-colors"
           >
-            <div className="flex items-center">
+            <div className="flex items-center text-lg sm:text-xl md:text-2xl ">
               <span>Work 💼</span>
             </div>
             <span className="text-2xl sm:text-3xl transition-transform duration-300">
@@ -74,9 +74,9 @@ const Experience = () => {
           {/* Awards Toggle Button */}
           <button
             onClick={() => setExpandedAwards(!expandedAwards)}
-            className="w-full flex items-center justify-between text-2xl sm:text-3xl md:text-4xl font-semibold p-3 sm:p-4 hover:bg-gray-50 rounded-lg transition-colors"
+            className="w-full flex items-center justify-between font-semibold p-3 sm:p-4 hover:bg-gray-50 rounded-lg transition-colors"
           >
-            <div className="flex items-center gap-1.5 sm:gap-2">
+            <div className="flex items-center text-lg sm:text-2xl md:text-3xl">
               <span>Awards & Achievements 🏆</span>
             </div>
             <span className="text-2xl sm:text-3xl transition-transform duration-300">

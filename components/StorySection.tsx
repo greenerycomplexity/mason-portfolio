@@ -3,7 +3,7 @@ import React from "react";
 const StorySection: React.FC = () => {
   return (
     <section id="story" className="py-12 sm:py-16 md:py-20 lg:py-24">
-      <div className="max-w-[90%] sm:max-w-[85%] md:max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 font-sans">
+      <div className="max-w-[90%] sm:max-w-[85%] md:max-w-6xl mx-auto px-2 sm:px-6 md:px-8 lg:px-10 font-sans">
         <h2 className="text-5xl font-bold mb-8 sm:mb-10 md:mb-12 text-black">
           About me!
         </h2>
