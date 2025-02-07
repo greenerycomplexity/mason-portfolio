@@ -32,10 +32,24 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
       requestAnimationFrame(() => {
         setIsAnimating(true);
       });
+
+      // Add event listener for Escape key
+      const handleEscapeKey = (event: KeyboardEvent) => {
+        if (event.key === "Escape") {
+          onClose();
+        }
+      };
+
+      document.addEventListener("keydown", handleEscapeKey);
+
+      // Cleanup function to remove event listener
+      return () => {
+        document.removeEventListener("keydown", handleEscapeKey);
+      };
     } else {
       setIsAnimating(false);
     }
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   const scrollCarousel = (direction: "left" | "right") => {
     if (!carouselRef.current) return;
