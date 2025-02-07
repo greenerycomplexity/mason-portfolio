@@ -177,9 +177,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
             </div>
           </div>
 
-          <div className="px-6 py-2 sm:px-8 md:px-12 lg:px-16 pb-6 sm:pb-8 md:pb-12 lg:pb-16 bg-white rounded-b-xl">
+          <div className="mx-14 px-6 py-2 sm:px-8 md:px-12 lg:px-16 pb-6 sm:pb-8 md:pb-12 lg:pb-16 bg-white rounded-b-xl">
             {/* Project description */}
-            <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6">
+            <p className="text-md sm:text-lg font-semibold text-gray-500 mb-4 sm:mb-6">
               {project.description}
             </p>
             {/* Project tags */}
@@ -199,7 +199,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
                 {project.detailedDescription.map((paragraph, index) => (
                   <p
                     key={index}
-                    className="text-base sm:text-lg mb-3 sm:mb-4 last:mb-0"
+                    className="text-base font-sans opacity-95 sm:text-lg mb-8 last:mb-0"
                   >
                     {paragraph}
                   </p>
