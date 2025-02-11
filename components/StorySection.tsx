@@ -1,5 +1,7 @@
 import React from "react";
 
+const LINKEDIN_URL = "https://www.linkedin.com/in/caohaison/";
+
 const StorySection: React.FC = () => {
   return (
     <section id="story" className="py-12 sm:py-16 md:py-20 lg:py-24">
@@ -9,17 +11,31 @@ const StorySection: React.FC = () => {
         </h2>
         <div className="text-base sm:text-lg text-gray-600 max-w-[95%] sm:max-w-2xl md:max-w-3xl">
           <p className="mb-4 sm:mb-6">
-            I am a recent Computer Science graduate from RMIT University,
-            graduating with Distinction. My passion lies at the intersection of
-            technology and user experience design, demonstrated by winning
-            Apple&apos;s Swift Student Challenge with an ADHD accessibility app
-            🏆
+            I'm a recent Computer Science graduate from RMIT University,
+            graduating with Distinction. My focus is on accessible and
+            human-centric software design. In 2024, I won the Apple's Swift
+            Student Challenge for developing an ADHD-focused accessibility app
+            on iOS, as 1 out of 350 student winners worldwide.
           </p>
+          <p className="mb-4 sm:mb-6">
+            Originally from Vietnam, my background and experience in both
+            Western & Asian markets helps me approach technical challenges from
+            multiple angles, with an understanding of cross-cultural user needs
+            and design considerations.
+          </p>
+          <p>Below are some of my past projects and experiences.</p>
+
           <p>
-            As a 21-year-old international student from Vietnam, I bring fresh
-            perspectives to software engineering. I combine technical expertise
-            with personal insights to create human-centric, accessible solutions
-            that make technology work for everyone ✨
+            Have a browse, then{" "}
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-700 font-semibold"
+            >
+              let's talk
+            </a>
+            !
           </p>
         </div>
       </div>

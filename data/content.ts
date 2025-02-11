@@ -132,10 +132,11 @@ export const awards: AwardItem[] = [
       "Submitted an iOS app built in SwiftUI, see Projects section for more details.",
   },
   {
-    title: "IELTS 9.0",
+    title: "IELTS 9.0/9.0",
     issuer: "IELTS Official",
     date: "Dec 2024 - Dec 2026",
-    description: "Internationally recognised English proficiency test.",
+    description:
+      "International English Language Testing System. Highest score possible. Native-level English fluency and speaking ability.",
   },
   {
     title: "Boeing Hackathon",
