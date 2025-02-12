@@ -1,4 +1,9 @@
 import type { Config } from "tailwindcss";
+import scrollbarHide from "tailwind-scrollbar-hide";
+
+type CSSProperties = {
+  [key: string]: string | CSSProperties;
+};
 
 const config: Config = {
   content: [
@@ -21,8 +26,12 @@ const config: Config = {
     },
   },
   plugins: [
-    require("tailwind-scrollbar-hide"),
-    function ({ addUtilities }: { addUtilities: Function }) {
+    scrollbarHide,
+    function ({
+      addUtilities,
+    }: {
+      addUtilities: (utilities: Record<string, CSSProperties>) => void;
+    }) {
       addUtilities({
         ".scrollbar-hide": {
           "-ms-overflow-style": "none",

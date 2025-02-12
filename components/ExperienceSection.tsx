@@ -24,7 +24,7 @@ const Experience = () => {
             onClick={() => setExpandedWork(!expandedWork)}
             className="w-full flex items-center justify-between font-semibold p-3 sm:p-4 hover:bg-gray-50 rounded-lg transition-colors"
           >
-            <div className="flex items-center text-lg sm:text-2xl md:text-3xl">
+            <div className="flex items-center text-xl sm:text-2xl md:text-3xl">
               <span>Work 💼</span>
             </div>
             <span className="text-2xl sm:text-3xl transition-transform duration-300">
@@ -75,8 +75,8 @@ const Experience = () => {
             onClick={() => setExpandedAwards(!expandedAwards)}
             className="w-full flex items-center justify-between font-semibold p-3 sm:p-4 hover:bg-gray-50 rounded-lg transition-colors"
           >
-            <div className="flex items-center text-lg sm:text-2xl md:text-3xl">
-              <span>Awards & Achievements 🏆</span>
+            <div className="flex items-center text-xl sm:text-2xl md:text-3xl">
+              <span>Achievements 🏆</span>
             </div>
             <span className="text-2xl sm:text-3xl transition-transform duration-300">
               {expandedAwards ? "−" : "+"}

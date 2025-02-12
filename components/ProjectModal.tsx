@@ -177,7 +177,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
             </div>
           </div>
 
-          <div className="mx-14 px-6 py-2 sm:px-8 md:px-12 lg:px-16 pb-6 sm:pb-8 md:pb-12 lg:pb-16 bg-white rounded-b-xl">
+          <div className="mx-14 px-2 py-2 sm:px-8 md:px-12 lg:px-16 pb-6 sm:pb-8 md:pb-12 lg:pb-16 bg-white rounded-b-xl">
             {/* Project description */}
             <p className="text-md sm:text-lg font-semibold text-gray-500 mb-4 sm:mb-6">
               {project.description}

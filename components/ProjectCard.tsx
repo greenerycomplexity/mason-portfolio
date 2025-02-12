@@ -39,12 +39,10 @@ const ProjectCard = ({
       {/* Content Section */}
       <div className="mt-4 flex flex-col flex-1">
         {/* Project Title */}
-        <h3 className="text-base sm:text-lg md:text-xl lg:text-xl pr-4 font-bold truncate">
-          {title}
-        </h3>
+        <h3 className="text-xl pr-4 font-bold truncate">{title}</h3>
 
         {/* Project Description */}
-        <p className="text-sm sm:text-base text-gray-600 mb-4 line-clamp-3 h-18 mt-2">
+        <p className="text-base text-gray-600 mb-4 line-clamp-3 h-18 mt-2">
           {description}
         </p>
 
