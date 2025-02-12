@@ -11,9 +11,9 @@ const StorySection: React.FC = () => {
         </h2>
         <div className="text-base sm:text-lg text-gray-600 max-w-[95%] sm:max-w-2xl md:max-w-3xl">
           <p className="mb-4 sm:mb-6">
-            I'm a recent Computer Science graduate from RMIT University,
+            I am a recent Computer Science graduate from RMIT University,
             graduating with Distinction. My focus is on accessible and
-            human-centric software design. In 2024, I won the Apple's Swift
+            human-centric software design. In 2024, I won the Apple Swift
             Student Challenge for developing an ADHD-focused accessibility app
             on iOS, as 1 out of 350 student winners worldwide.
           </p>
@@ -33,7 +33,7 @@ const StorySection: React.FC = () => {
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-700 font-semibold"
             >
-              let's talk
+              let&apos;s chat
             </a>
             !
           </p>
