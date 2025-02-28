@@ -97,6 +97,5 @@ This portfolio follows these core design principles:
 - Further customisation within the project card modal (headings, bold text, and hyperlinks)
 - Additional project details and case studies
 
----
-
+##
 ❤️ Mason Cao © 2025
