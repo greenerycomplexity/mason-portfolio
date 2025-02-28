@@ -1,10 +1,6 @@
 import type { Config } from "tailwindcss";
 import scrollbarHide from "tailwind-scrollbar-hide";
 
-type CSSProperties = {
-  [key: string]: string | CSSProperties;
-};
-
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -12,6 +8,27 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      sans: [
+        "ui-sans-serif",
+        "system-ui",
+        "sans-serif",
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+        '"Noto Color Emoji"',
+      ],
+      mono: [
+        "ui-monospace",
+        "SFMono-Regular",
+        "Menlo",
+        "Monaco",
+        "Consolas",
+        '"Liberation Mono"',
+        '"Courier New"',
+        "monospace",
+      ],
+    },
     extend: {
       colors: {
         background: "var(--background)",
@@ -25,24 +42,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    scrollbarHide,
-    function ({
-      addUtilities,
-    }: {
-      addUtilities: (utilities: Record<string, CSSProperties>) => void;
-    }) {
-      addUtilities({
-        ".scrollbar-hide": {
-          "-ms-overflow-style": "none",
-          "scrollbar-width": "none",
-          "&::-webkit-scrollbar": {
-            display: "none",
-          },
-        },
-      });
-    },
-  ],
+  plugins: [scrollbarHide],
 } satisfies Config;
 
 export default config;

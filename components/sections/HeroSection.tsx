@@ -2,7 +2,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import ProfileImage from "/public/assets/images/ProfileImage.jpeg";
-import AnimatedProfile from "./AnimatedProfile";
+import { AnimatedProfile } from "@/components/ui";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/caohaison/";
 

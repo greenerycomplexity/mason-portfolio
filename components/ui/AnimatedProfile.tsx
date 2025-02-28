@@ -1,7 +1,8 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
-import SkillIcon from "./SkillIcon";
+import { SkillIcon } from "@/components/ui";
 
 const skillIcons = [
   "/assets/icons/swiftui.svg",

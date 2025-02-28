@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import ProjectCard from "./ProjectCard";
-import ProjectModal from "./ProjectModal";
+import { ProjectCard, ProjectModal } from "@/components/ui";
 import { StaticImageData } from "next/image";
 
 interface Project {
